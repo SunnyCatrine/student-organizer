@@ -17,6 +17,76 @@ public class Student {
     private Integer lessonDuration;
     private Map<DayOfWeek, LocalDateTime> studentTimetable;
 
+    public Student(String name, String city, MathSubject subject, Exam exam, Zone timeZone, Integer pricePerHour, Integer lessonDuration, Map<DayOfWeek, LocalDateTime> studentTimetable) {
+        this.name = name;
+        this.city = city;
+        this.subject = subject;
+        this.exam = exam;
+        this.timeZone = timeZone;
+        this.pricePerHour = pricePerHour;
+        this.lessonDuration = lessonDuration;
+        this.studentTimetable = studentTimetable;
+    }
+
+    public static StudentBuilder builder(){
+        return new StudentBuilder();
+    }
+
+    public final static class StudentBuilder {
+        private String name;
+        private String city;
+        private MathSubject subject;
+        private Exam exam;
+        private Zone timeZone;
+        private Integer pricePerHour;
+        private Integer lessonDuration;
+        private Map<DayOfWeek, LocalDateTime> studentTimetable;
+
+        public final StudentBuilder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public final StudentBuilder city(String city) {
+            this.city = city;
+            return this;
+        }
+
+        public final StudentBuilder subject(MathSubject subject) {
+            this.subject = subject;
+            return this;
+        }
+
+        public final StudentBuilder exam(Exam exam) {
+            this.exam = exam;
+            return this;
+        }
+
+        public final StudentBuilder timeZone(Zone timeZone) {
+            this.timeZone = timeZone;
+            return this;
+        }
+
+        public final StudentBuilder pricePerHour(Integer pricePerHour) {
+            this.pricePerHour = pricePerHour;
+            return this;
+        }
+
+        public final StudentBuilder lessonDuration(Integer lessonDuration) {
+            this.lessonDuration = lessonDuration;
+            return this;
+        }
+
+        public final StudentBuilder studentTimeTable(Map<DayOfWeek, LocalDateTime> studentTimetable) {
+            this.studentTimetable = studentTimetable;
+            return this;
+        }
+
+        public final Student build() {
+            return new Student(name, city, subject, exam, timeZone, pricePerHour, lessonDuration, studentTimetable);
+        }
+    }
+
     public UUID getId() {
         return id;
     }
