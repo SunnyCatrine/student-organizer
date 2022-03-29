@@ -14,10 +14,10 @@ public class Student {
     private Exam exam;
     private Zone timeZone;
     private Integer pricePerHour;
-    private Integer lessonDuration;
+    private LessonDuration lessonDuration;
     private Map<DayOfWeek, LocalDateTime> studentTimetable;
 
-    public Student(String name, String city, MathSubject subject, Exam exam, Zone timeZone, Integer pricePerHour, Integer lessonDuration, Map<DayOfWeek, LocalDateTime> studentTimetable) {
+    public Student(String name, String city, MathSubject subject, Exam exam, Zone timeZone, Integer pricePerHour, LessonDuration lessonDuration, Map<DayOfWeek, LocalDateTime> studentTimetable) {
         this.name = name;
         this.city = city;
         this.subject = subject;
@@ -39,7 +39,7 @@ public class Student {
         private Exam exam;
         private Zone timeZone;
         private Integer pricePerHour;
-        private Integer lessonDuration;
+        private LessonDuration lessonDuration;
         private Map<DayOfWeek, LocalDateTime> studentTimetable;
 
         public final StudentBuilder name(String name) {
@@ -72,7 +72,7 @@ public class Student {
             return this;
         }
 
-        public final StudentBuilder lessonDuration(Integer lessonDuration) {
+        public final StudentBuilder lessonDuration(LessonDuration lessonDuration) {
             this.lessonDuration = lessonDuration;
             return this;
         }
@@ -115,7 +115,7 @@ public class Student {
         return pricePerHour;
     }
 
-    public Integer getLessonDuration() {
+    public LessonDuration getLessonDuration() {
         return lessonDuration;
     }
 
